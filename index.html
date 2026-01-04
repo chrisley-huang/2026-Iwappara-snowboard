@@ -7,153 +7,197 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2487.7">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="zh-TW"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;2026 岩原滑雪&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>[v-cloak] { display: none !important; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: 'Noto Sans JP', sans-serif; background-color: #F8FAFC; margin: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.banner-height { height: 250px; background-color: #cbd5e1; position: relative; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.tab-btn { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.active-tab { background: #2563EB !important; color: white !important; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.glass-card { background: rgba(255, 255, 255, 0.95); border: 1px solid #E2E8F0; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.line-btn { background-color: #06C755; color: white; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hide-scrollbar::-webkit-scrollbar { display: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div id="app" v-cloak&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="banner-height overflow-hidden"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="P1.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/1920x400?text=Ski+Trip+2026'"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"&gt;&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;nav class="absolute bottom-4 right-4 flex space-x-2 z-10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button v-for="t in tabs" :key="t.id" @click="currentTab = t.id"<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>:class="['p-3 rounded-2xl transition-all shadow-lg tab-btn', currentTab === t.id ? 'active-tab' : 'text-white']"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;i :data-lucide="t.icon" class="w-5 h-5"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="absolute bottom-6 left-6 text-white"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-2xl font-bold tracking-tight"&gt;2026 岩原滑雪&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="p-4 space-y-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section v-if="currentTab === 'schedule'" class="space-y-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex space-x-3 overflow-x-auto hide-scrollbar py-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div v-for="d in dateList" :key="d.full" @click="selectedDate = d.full"</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>:class="['flex-shrink-0 w-14 h-20 rounded-2xl flex flex-col items-center justify-center transition-all shadow-sm', selectedDate === d.full ? 'bg-blue-600 text-white' : 'bg-white text-slate-400']"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[10px] font-bold uppercase"&gt;{{ d.weekday }}&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-xl font-bold"&gt;{{ d.day }}&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="schedule-items" class="space-y-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div v-for="item in filteredSchedule" :key="item.id" class="glass-card rounded-[32px] p-5 shadow-sm"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-start mb-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-[9px] px-2 py-1 rounded-lg font-bold bg-blue-100 text-blue-600 uppercase"&gt;{{ item.category }}&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-xs font-bold text-blue-500"&gt;{{ item.time }}&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold text-slate-800"&gt;{{ item.name }}&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button @click="openNav(item.name)" class="mt-4 w-full bg-slate-50 text-slate-600 py-3 rounded-2xl text-xs font-bold active:bg-slate-200"&gt;開啟導航&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section v-if="currentTab === 'expense'" class="space-y-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-slate-800 rounded-[40px] p-8 text-white shadow-xl relative overflow-hidden"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"&gt;Total Expense&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-4xl font-bold mt-2"&gt;¥ {{ totalExpense.toLocaleString() }}&lt;/h2&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://liff.line.me/1655320992-Y8GowEpw/g/ruP6h1R8snyNdvTnhxPXJW" target="_blank"<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">                   </span>class="mt-6 flex items-center justify-center space-x-2 line-btn py-3 rounded-2xl font-bold text-sm shadow-lg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;LINE 分帳群組&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="external-link" class="w-4 h-4"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;i data-lucide="wallet" class="absolute -right-6 -bottom-6 w-32 h-32 opacity-10"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="space-y-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div v-for="ex in expenseList" :key="ex.id" class="glass-card rounded-2xl p-4 flex justify-between items-center"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-bold"&gt;{{ ex.name }}&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-[10px] text-slate-400"&gt;{{ ex.date }}&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm font-bold text-slate-800"&gt;¥ {{ ex.amount }}&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section v-if="currentTab === 'info'" class="space-y-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-card rounded-[32px] p-5"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-sm font-bold mb-4"&gt;航班與住宿資訊&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="image_f6be1c.png" class="w-full rounded-2xl shadow-sm"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://www.cathaypacific.com/cx/zh_TW.html" target="_blank" class="mt-4 block text-center bg-slate-800 text-white py-3 rounded-2xl text-xs font-bold"&gt;國泰航空官網&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="fixed bottom-10 right-6 w-14 h-14 bg-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center z-50"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;i data-lucide="plus" class="w-8 h-8"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script src="https://unpkg.com/vue@3/dist/vue.global.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"&gt;&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">const { createApp, ref, computed, onMounted } = Vue;</p>
-<p class="p2"><br></p>
-<p class="p1">createApp({</p>
-<p class="p1"><span class="Apple-converted-space">    </span>setup() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const currentTab = ref('schedule');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const selectedDate = ref('2026-01-16');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const tabs = [</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 'schedule', icon: 'map-pin' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 'info', icon: 'info' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 'shop', icon: 'shopping-basket' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 'expense', icon: 'banknote' }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const dateList = [</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ full: '2026-01-16', weekday: 'Fri', day: '16' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ full: '2026-01-18', weekday: 'Sun', day: '18' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ full: '2026-01-19', weekday: 'Mon', day: '19' }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const scheduleData = ref([</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 1, date: '2026-01-16', category: '航班', name: 'CX450 TPE-NRT', time: '12:50' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 2, date: '2026-01-18', category: '住宿', name: 'Hotel Aster', time: '15:00' }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>]);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const expenseList = ref([</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ id: 1, name: '新幹線 TOKI 325', amount: 6500, date: '2026-01-18' }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>]);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const filteredSchedule = computed(() =&gt; scheduleData.value.filter(s =&gt; s.date === selectedDate.value));</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const totalExpense = computed(() =&gt; expenseList.value.reduce((s, e) =&gt; s + e.amount, 0));</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const openNav = (name) =&gt; window.open(`https://www.google.com/maps/dir/?api=1&amp;destination=2{encodeURIComponent(name)}`, '_blank');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>onMounted(() =&gt; { lucide.createIcons(); });</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>return { currentTab, tabs, dateList, selectedDate, filteredSchedule, expenseList, totalExpense, openNav };</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1">}).mount('#app');</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="zh-TW"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Iwappara Snow Trip 2026&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/vue@3/dist/vue.global.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&amp;display=swap');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body { font-family: 'Noto Sans JP', sans-serif; -webkit-tap-highlight-color: transparent; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.hide-scrollbar::-webkit-scrollbar { display: none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tab-shadow { box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="bg-[#EBF3FA]"&gt; &lt;div id="app" class="max-w-md mx-auto min-h-screen relative pb-24 shadow-2xl bg-[#EBF3FA]"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header class="relative h-[250px] overflow-hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;img src="P1" alt="Iwappara Banner" class="w-full h-full object-cover"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="absolute bottom-12 right-4 flex space-x-3 z-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button v-for="tab in tabs" :key="tab.id" @click="currentTab = tab.id"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>:class="['w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg',<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>currentTab === tab.id ? 'bg-[#2B6CB0] text-white scale-110' : 'glass-card text-blue-800']"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;i :class="tab.icon"&gt;&lt;/i&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;main class="relative -mt-10 bg-[#EBF3FA] rounded-t-[40px] px-5 pt-10 min-h-screen"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;section v-if="currentTab === 'itinerary'"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card rounded-3xl p-4 mb-6 flex items-center justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="text-blue-500 text-3xl mr-3"&gt;&lt;i class="fas fa-snowflake"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-[10px] text-blue-400 font-bold uppercase tracking-wider"&gt;Yuzawa Weather&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xl font-bold text-slate-700"&gt;-3°C / &lt;span class="text-sm font-normal text-slate-400"&gt;Feels -6°C&lt;/span&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-blue-100/50 px-3 py-1 rounded-full text-[10px] font-bold text-blue-600 italic"&gt;SNOWY&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex overflow-x-auto hide-scrollbar space-x-3 mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div v-for="d in dateRange" :key="d.date"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>@click="selectedDate = d.date"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>:class="['flex-shrink-0 w-14 h-20 rounded-2xl flex flex-col items-center justify-center transition-all',<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>selectedDate === d.date ? 'bg-white shadow-xl text-blue-600' : 'text-blue-300']"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="text-[10px] font-bold uppercase"&gt;{{ d.weekday }}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;span class="text-xl font-bold"&gt;{{ d.day }}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div v-for="(item, index) in filteredSchedule" :key="index" class="relative"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div v-if="index &gt; 0" class="flex items-center py-2 ml-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="w-0.5 h-6 bg-blue-200"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="mx-4 flex items-center text-[10px] text-blue-400 font-bold"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;i :class="getTransportIcon(item.transport)"&gt;&lt;/i&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span class="ml-1"&gt;{{ item.travelTime }} MINS&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div :class="['p-4 rounded-3xl shadow-sm border border-white transition-all active:scale-95',<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>item.category === '航班' ? 'bg-gradient-to-br from-blue-600 to-blue-400 text-white' : 'bg-white']"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>@click="item.address ? openNav(item.address) : null"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="flex justify-between items-start mb-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-black/10 tracking-widest"&gt;{{ item.category }}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span class="text-[10px] font-bold opacity-70"&gt;{{ item.time }}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h3 class="font-bold text-lg"&gt;{{ item.title }}&lt;/h3&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div v-if="item.category === '航班'" class="mt-3 flex justify-between items-center bg-white/10 p-3 rounded-xl"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div class="text-center"&gt;&lt;p class="text-xs opacity-70"&gt;TPE&lt;/p&gt;&lt;p class="font-bold"&gt;12:50&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;i class="fas fa-plane text-xs px-4"&gt;&lt;/i&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div class="text-center"&gt;&lt;p class="text-xs opacity-70"&gt;NRT&lt;/p&gt;&lt;p class="font-bold"&gt;16:50&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div v-else class="mt-2 text-xs opacity-60 flex items-center italic"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;i class="fas fa-map-marker-alt mr-1"&gt;&lt;/i&gt; {{ item.address || '無導航資訊' }}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;section v-if="currentTab === 'info'" class="space-y-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card p-5 rounded-3xl"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4 class="text-sm font-bold text-blue-800 mb-3"&gt;&lt;i class="fas fa-calculator mr-2"&gt;&lt;/i&gt;匯率即時換算&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="relative"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="absolute left-4 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400"&gt;JPY&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;input type="number" v-model="jpy" class="w-full bg-white/50 border-none rounded-2xl py-3 pl-12 pr-4 text-lg font-bold"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-center"&gt;&lt;i class="fas fa-arrow-down text-blue-300"&gt;&lt;/i&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="relative"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span class="absolute left-4 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400"&gt;TWD&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="w-full bg-blue-600 text-white rounded-2xl py-3 pl-12 text-lg font-bold"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>{{ (jpy * 0.21).toLocaleString() }}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-5 rounded-3xl shadow-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-[10px] font-black text-blue-500 uppercase mb-1"&gt;Hotel Information&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-slate-800"&gt;Echigoyuzawa Onsen Hotel Aster&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;1/18 - 1/24 (6晚)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button @click="openNav('5 Chome-4-2, 湯澤町')" class="mt-3 w-full bg-slate-100 text-slate-600 py-2 rounded-xl text-xs font-bold"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-location-arrow mr-1"&gt;&lt;/i&gt; Google Map 導航</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;section v-if="currentTab === 'shop' || currentTab === 'cost'" class="text-center pt-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;i class="fas fa-folder-open text-blue-200 text-6xl mb-4"&gt;&lt;/i&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p class="text-blue-400 font-bold"&gt;功能開發中，請點擊下方 + 新增資料&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button v-if="currentTab !== 'info'" class="fixed bottom-6 right-6 w-16 h-16 bg-[#2B6CB0] text-white rounded-full shadow-2xl flex items-center justify-center text-2xl z-50 border-4 border-white"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;i class="fas fa-plus"&gt;&lt;/i&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const { createApp, ref, computed } = Vue;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>createApp({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setup() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const currentTab = ref('itinerary');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const selectedDate = ref('2026-01-16');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const jpy = ref(1000);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const tabs = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 'itinerary', icon: 'fas fa-map-marked-alt' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 'info', icon: 'fas fa-info-circle' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 'shop', icon: 'fas fa-shopping-basket' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ id: 'cost', icon: 'fas fa-wallet' }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const dateRange = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-16', day: '16', weekday: 'Fri' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-17', day: '17', weekday: 'Sat' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-18', day: '18', weekday: 'Sun' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-19', day: '19', weekday: 'Mon' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-20', day: '20', weekday: 'Tue' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-21', day: '21', weekday: 'Wed' },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-22', day: '22', weekday: 'Thu' }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const schedule = ref([</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-16', time: '12:50', title: '國泰航空 CX450', category: '航班', address: '', transport: 'plane', travelTime: 0 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-18', time: '14:46', title: '新幹線 TOKI 325', category: '交通', address: '上野站', transport: 'train', travelTime: 40 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-18', time: '18:30', title: 'Yakiniku Sakaeya 晚餐', category: '美食', address: '3 Chome-2-1 Yuzawa, Niigata', transport: 'walk', travelTime: 15 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-19', time: '07:00', title: 'BOO SPORTS 雪具租借', category: '購物', address: '新潟縣南魚沼郡湯澤町湯澤498-1', transport: 'car', travelTime: 10 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ date: '2026-01-19', time: '10:00', title: '岩原雪場 滑雪 (有師傅)', category: '景點', address: '岩原滑雪場', transport: 'car', travelTime: 5 }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const filteredSchedule = computed(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return schedule.value.filter(item =&gt; item.date === selectedDate.value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const getTransportIcon = (type) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const icons = { walk: 'fas fa-walking', car: 'fas fa-car', train: 'fas fa-subway', plane: 'fas fa-plane' };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>return icons[type] || 'fas fa-ellipsis-h';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const openNav = (addr) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>window.open(`https://www.google.com/maps/dir/?api=1&amp;destination=${encodeURIComponent(addr)}`, '_blank');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>currentTab, tabs, dateRange, selectedDate, filteredSchedule, jpy, getTransportIcon, openNav</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}).mount('#app')</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
