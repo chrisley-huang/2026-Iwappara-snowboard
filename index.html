@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026 岩原滑雪</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        [v-cloak] { display: none; }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #F1F5F9; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .banner-container { height: 250px; position: relative; }
+        .tab-btn { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); }
+        .active-tab { background: #3B82F6 !important; color: white !important; }
+        .date-card.active { background: #3B82F6; color: white; transform: scale(1.05); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .drag-handle { cursor: grab; }
+    </style>
+</head>
+<body class="max-w-md mx-auto shadow-2xl min-h-screen relative">
+
+<div id="app" v-cloak>
+    <header class="banner-container overflow-hidden">
+        <img src="P1.jpg" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+        
+        <nav class="absolute bottom-4 right-4 flex space-x-2 z-10">
+            <button @click="currentTab = 'schedule'" :class="['tab-btn p-3 rounded-2xl transition-all', currentTab === 'schedule' ? 'active-tab' : 'text-white']">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </button>
+            <button @click="currentTab = 'info'" :class="['tab-btn p-3 rounded-2xl transition-all', currentTab === 'info' ? 'active-tab' : 'text-white']">
+                <i data-lucide="info" class="w-5 h-5"></i>
+            </button>
+            <button @click="currentTab = 'shop'" :class="['tab-btn p-3 rounded-2xl transition-all', currentTab === 'shop' ? 'active-tab' : 'text-white']">
+                <i data-lucide="shopping-basket" class="w-5 h-5"></i>
+            </button>
+            <button @click="currentTab = 'expense'" :class="['tab-btn p-3 rounded-2xl transition-all', currentTab === 'expense' ? 'active-tab' : 'text-white']">
+                <i data-lucide="banknote" class="w-5 h-5"></i>
+            </button>
+        </nav>
+        
+        <div class="absolute bottom-6 left-6 text-white">
+            <h1 class="text-2xl font-bold">2026 岩原滑雪</h1>
+        </div>
+    </header>
+
+    <main class="p-4">
+        <div v-if="currentTab === 'schedule'" class="space-y-4">
+            <div class="flex space-x-3 overflow-x-auto hide-scrollbar py-2">
+                <div v-for="d in dateList" :key="d.full" 
+                     @click="selectedDate = d.full"
+                     :class="['date-card flex-shrink-0 w-14 h-20 rounded-2xl flex flex-col items-center justify-center transition-all', selectedDate === d.full ? 'active' : 'bg-white text-slate-400']">
+                    <span class="text-xs font-bold">{{ d.weekday }}</span>
+                    <span class="text-xl font-bold">{{ d.day }}</span>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-4 flex justify-between items-center border border-blue-50">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="cloud-snow" class="text-blue-500 w-8 h-8"></i>
+                    <div>
+                        <p class="text-sm font-bold">新潟・越後湯澤</p>
+                        <p class="text-[10px] text-slate-400">目前天氣：小雪</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-2xl font-bold text-blue-600">-2°C</p>
+                    <p class="text-[10px] text-slate-400">體感 -5°C</p>
+                </div>
+            </div>
+
+            <div id="schedule-list" class="space-y-4">
+                <div v-for="(item, index) in filteredSchedule" :key="item.id" class="relative">
+                    <div v-if="index > 0" class="flex justify-center my-2 text-slate-400">
+                        <i data-lucide="car" class="w-3 h-3 mr-1"></i>
+                        <span class="text-[10px] font-bold">約 {{ item.travelTime }} 分鐘</span>
+                    </div>
+                    <div :class="['glass-card rounded-[32px] p-5 shadow-sm border border-slate-100', item.category === '航班' ? 'bg-slate-800 text-white' : '']" @click="openNavigation(item.name)">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[9px] px-2 py-1 rounded-lg font-bold bg-blue-100 text-blue-600">{{ item.category }}</span>
+                            <span class="text-[10px] font-bold text-blue-500">{{ item.time }}</span>
+                        </div>
+                        <h3 class="text-lg font-bold">{{ item.name }}</h3>
+                        <p class="text-xs mt-2 opacity-60">{{ item.note }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div v-if="currentTab === 'info'" class="space-y-6">
+            <div class="glass-card rounded-[32px] p-6 shadow-sm">
+                <h3 class="text-xs font-bold text-blue-500 mb-4 uppercase">匯率換算 (0.21)</h3>
+                <div class="space-y-3">
+                    <input type="number" v-model="jpy" class="w-full bg-slate-50 rounded-2xl p-4 text-xl font-bold border-none" placeholder="輸入日幣">
+                    <div class="bg-blue-600 text-white p-4 rounded-2xl text-xl font-bold">TWD {{ (jpy * 0.21).toFixed(0) }}</div>
+                </div>
+            </div>
+            <div class="glass-card rounded-[32px] p-5 shadow-sm">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-sm font-bold">國泰航空官網</h3>
+                    <a href="https://www.cathaypacific.com/cx/zh_TW.html" target="_blank" class="bg-slate-800 text-white text-[10px] px-3 py-1 rounded-full">點此開啟</a>
+                </div>
+                <img src="image_f6be1c.png" class="w-full rounded-2xl">
+            </div>
+        </div>
+    </main>
+
+    <button class="fixed bottom-10 right-6 w-14 h-14 bg-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center z-50">
+        <i data-lucide="plus" class="w-8 h-8"></i>
+    </button>
+</div>
+
+<script>
+const { createApp, ref, computed, onMounted } = Vue;
+createApp({
+    setup() {
+        const currentTab = ref('schedule');
+        const selectedDate = ref('2026-01-16');
+        const jpy = ref(1000);
+        const dateList = [
+            { full: '2026-01-16', weekday: 'Fri', day: '16' },
+            { full: '2026-01-17', weekday: 'Sat', day: '17' },
+            { full: '2026-01-18', weekday: 'Sun', day: '18' },
+            { full: '2026-01-19', weekday: 'Mon', day: '19' }
+        ];
+        const schedule = ref([
+            { id: 1, date: '2026-01-16', category: '航班', name: 'CX450 TPE-NRT', time: '12:50', note: '第一航廈', travelTime: 0 },
+            { id: 2, date: '2026-01-18', category: '住宿', name: 'Hotel Aster', time: '15:00', note: 'Check-in', travelTime: 70 }
+        ]);
+        const filteredSchedule = computed(() => schedule.value.filter(s => s.date === selectedDate.value));
+        const openNavigation = (name) => window.open(`https://www.google.com/maps/dir/?api=1&destination=0{encodeURIComponent(name)}`, '_blank');
+        onMounted(() => { lucide.createIcons(); });
+        return { currentTab, selectedDate, dateList, filteredSchedule, jpy, openNavigation };
+    }
+}).mount('#app');
+</script>
+</body>
+</html>
